@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samson AI</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #101827;
+      color: white;
+      margin: 0;
+      padding: 30px 15px;
+      text-align: center;
+    }
+
+    .app {
+      max-width: 450px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 16px;
+    }
+
+    h1 { color: #60a5fa; }
+
+    #chat {
+      min-height: 150px;
+      padding: 12px;
+      text-align: left;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    input {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      background: #3b82f6;
+      color: white;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <h1>Samson AI 🤖</h1>
+    <p>Your personal AI assistant</p>
+
+    <div id="chat">Samson AI: Hello! Welcome to Samson AI. What would you like to talk about?</div>
+
+    <input id="message" type="text" placeholder="Type your message here">
+    <button onclick="reply()">Send</button>
+  </div>
+
+  <script>
+    function reply() {
+      const input = document.getElementById("message");
+      const chat = document.getElementById("chat");
+      const message = input.value.trim();
+
+      if (!message) return;
+
+      chat.textContent += "\n\nYou: " + message;
+      chat.textContent += "\n\nSamson AI: Thanks for your message! A real AI connection will be added in the next stage.";
+      input.value = "";
+    }
+  </script>
+</body>
+</html>
